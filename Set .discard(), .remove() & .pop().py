@@ -61,7 +61,6 @@
 # Constraints
 
 
-
 # Output Format
 
 # Print the sum of the elements of set  on a single line.
@@ -76,10 +75,10 @@
 # discard 9
 # discard 8
 # remove 7
-# pop 
+# pop
 # discard 6
 # remove 5
-# pop 
+# pop
 # discard 5
 # Sample Output
 
@@ -90,3 +89,19 @@
 
 # Note: Convert the elements of set s to integers while you are assigning them. To ensure the proper input of the set, we have added the first two lines of code to the editor.
 
+inputset = []
+n = int(input())
+inputset = set(map(int, input().split()))
+
+inst_number = int(input())
+
+for x in range(inst_number):
+
+    inp = input()
+    if inp == 'pop':
+        inputset.pop()
+    elif inp.__contains__('remove'):
+        inputset.remove(int(inp[-1]))
+    elif inp.__contains__('discard'):
+        inputset.discard(int(inp[-1]))
+print(sum(inputset))
