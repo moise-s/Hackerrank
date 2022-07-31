@@ -32,7 +32,7 @@
 
 # Constraints
 
-# , where  is the length of 
+# , where  is the length of
 # It is guaranteed that  is a multiple of .
 # Sample Input
 
@@ -52,15 +52,19 @@
 # Print each  on a new line.
 
 def merge_the_tools(string, k):
-    # your code goes here
+    # # your code goes here
     substring = []
-    
-    for x in range(int(len(string)/k)):
-        substring.append(string[x:x+k])
-        substring[x].split()
-        print(substring)
-        
-    
+    temp = 0
+
+    for x in string:
+        temp += 1
+        if x not in substring:
+            substring.append(x)
+        if temp == k:
+            print(''.join(substring))
+            substring = []
+            temp = 0
+
 
 if __name__ == '__main__':
     string, k = input(), int(input())
